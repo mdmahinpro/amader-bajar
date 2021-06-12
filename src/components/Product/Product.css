@@ -1,0 +1,18 @@
+.product {
+  display: flex;
+  border-bottom: 1px solid springgreen;
+  margin: 5px;
+  padding: 3px;
+}
+
+.details {
+  color: indigo;
+  margin-left: 5px;
+}
+
+.addToCartBtn {
+  background-color: lightblue;
+  padding: 8px;
+  border: 2px solid ghostwhite;
+  cursor: pointer;
+}
