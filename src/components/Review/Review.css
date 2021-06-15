@@ -1,0 +1,14 @@
+.reviewContainer {
+  display: flex;
+}
+
+.productContainer {
+  width: 70%;
+}
+
+.placeOrder {
+  background-color: lightblue;
+  padding: 8px;
+  border: 2px solid ghostwhite;
+  cursor: pointer;
+}

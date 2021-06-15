@@ -1,0 +1,11 @@
+.removeBtn {
+  background-color: lightblue;
+  padding: 8px;
+  border: 2px solid ghostwhite;
+  cursor: pointer;
+}
+
+.review-item {
+  border-top: 2px solid greenyellow;
+  padding: 12px;
+}

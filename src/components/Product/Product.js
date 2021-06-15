@@ -1,6 +1,7 @@
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Product.css';
 
 export default function Product(props) {
@@ -12,11 +13,11 @@ export default function Product(props) {
                 <img src={img} alt="" />
             </div>
             <div className="details">
-                <h3>{name}</h3>
+                <Link to={`/product/${key}`}>{name}</Link>
                 <h4>Seller: {seller}</h4>
                 <h2>Price: {price}$</h2>
                 <h4>In Stock : {stock}</h4>
-                <button  onClick={()=>handleAddProduct(props.product)} className="addToCartBtn"><FontAwesomeIcon icon={faCartPlus} /> Add to Cart</button>
+                {props.showAddToCart?<button  onClick={()=>handleAddProduct(props.product)} className="addToCartBtn"><FontAwesomeIcon icon={faCartPlus} /> Add to Cart</button>:""}
             </div>
         </div>
     )
