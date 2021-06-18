@@ -9,6 +9,7 @@ import './Shop.css';
 
 export default function Shop() {
    
+    //Product State
     const first10=fakeData.slice(0,10)
     const [products, setProducts] = useState(first10)
 
@@ -48,7 +49,8 @@ export default function Shop() {
 
 
     return (
-        <div className="shop-container">
+        // Load all Product Data
+        <div className="shop-container"> 
             <div className="product-container">
                 {
                     products.map(product=> <Product showAddToCart={true} key={product.key} product={product} handleAddProduct={handleAddProduct}></Product> )
