@@ -5,6 +5,7 @@ export default function Cart(props) {
     const cart=props.cart;
     let shipping=0;
     const totalPrice=cart.reduce((total,product)=>total+product.price*product.quantity,0)
+    
     if(totalPrice>30){
         shipping=12.99;
     }

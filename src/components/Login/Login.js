@@ -19,6 +19,26 @@ export default function Login() {
     })
     const [newUser,setNewUser]=useState(false)
 
+    const handleGoogleLogin=()=>{
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        var token = credential.accessToken;
+        var user = result.user;
+        setUser(user);
+      }).catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+        // ...
+      });
+    }
+
     const handleSubmit=(e)=>{
         console.log(user.email,user.password);
         if(newUser && user.email && user.password ){
@@ -100,6 +120,8 @@ export default function Login() {
                 <input type="password" onBlur={handleBlur} name="password" placeholder="input your password" required /> <br />
                 {!newUser?<input type="submit" value="Submit" />: <input type="submit" value="Sign Up " /> }
             </form>
+
+            <button onClick={handleGoogleLogin}>Login With Google</button>
         </div>
     )
 }

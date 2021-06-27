@@ -5,6 +5,7 @@ import {
 import PrivateRoute from '../src/components/PrivateRoute/PrivateRoute';
 import './App.css';
 import Header from './components/Header/Header';
+import Inventory from "./components/Inventory/Inventory";
 import Login from "./components/Login/Login";
 import NotMatch from "./components/NotMatch/NotMatch";
 import ProductDetails from './components/ProductDetails/ProductDetails';
@@ -36,6 +37,9 @@ function App() {
       </Route>
       <Route path="/review">
         <Review></Review>
+      </Route>
+      <Route path="/inventory">
+        <Inventory></Inventory>
       </Route>
       <Route path='/login'>
         <Login></Login>
